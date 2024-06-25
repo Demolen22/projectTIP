@@ -32,3 +32,6 @@ copy run start
 ```
 #### Konfiguracja części wirtualnej
 ## Wnioski i napotkane problemy
+## Źródła
+[Kathará - github](https://github.com/KatharaFramework/Kathara)
+[Kathará - przykłady](https://github.com/KatharaFramework/Kathara-Labs)
