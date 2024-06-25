@@ -31,3 +31,4 @@ exit
 copy run start
 ```
 #### Konfiguracja części wirtualnej
+## Wnioski i napotkane problemy
