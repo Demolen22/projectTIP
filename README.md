@@ -2,12 +2,14 @@
 #### *Tobiasz Szulc - Nikodem Oleniacz - Michał Szewc*
 ## Wstęp
 Celem projektu było przygotowanie sieci składającej się z części wirtualnej oraz części sprzętowej, a także zademonstrowanie w jaki sposób można wykorzystać zarządzanie programowe w takim środowisku.
-Do zrealizowania celu wybrano technologię [Kathará](https://www.kathara.org/). Jest to narzędzie służące do tworzenia zwirtualizowanych sieci.
+Do zrealizowania celu wybrano technologię [Kathará](https://www.kathara.org/). Jest to narzędzie służące do tworzenia zwirtualizowanych sieci, wykorzystujące linuxowe kontenery dockerowe.
 Do realizacji części sprzętowej wykorzystano switch L2 Cisco 2950.
 ## Środowisko
 #### Schemat:
 ![image](./images/architecture_diagram_light.png#gh-light-mode-only)
 ![image](./images/architecture_diagram_dark.png#gh-dark-mode-only)
+
+Komunikacja między komputerem a switchem przechodzi przez port 24 vlan 100. Wszystkie wirtualne sieci przechodzą przez trunk.
 ## Jak zreplikować
 #### Konfiguracja switcha
 ```bash
@@ -113,7 +115,7 @@ sudo ip addr add 10.100.0.2/24 dev enp3s0.100
 #### Konfiguracja części wirtualnej
 Wyświetlenie informacji o interfejsach:
 ```
-$ ip link
+$ ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 2: enp3s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
@@ -152,8 +154,16 @@ E enp3s0.50
 #### Zatrzymanie środowiska
 - Zatrzymanie Kathary: ```sudo kathara lclean```
 - Skrypt Netmiko nie wprowadza trwałych zmian, można wrócić do stanu bazowego restartując switch.
-## Wnioski i napotkane problemy
-todo: czm zmiana pluginu
+## Napotkane problemy i wnioski
+#### Problemy:
++ Główny napotkany problem to konieczność zmiany pluginu sieciowego na starszą wersję.
+  Przyczyna: nowszy plugin *katharanp_vde* powodował błędy, gdy zdefiniowany był więcej niż jeden ExternalLink.
+  Po zmianie na *katharanp*, problem zniknął.
++ Python api do Kathary nie działa zbyt dobrze z ExternalLink-ami. Pojawiają się błędy przy deploy-u oraz undeploy-u.
+#### Wnioski
+Kathará jest ciekawym narzędziem które ma potencjał, ale ma swoje problemy - ciągle jest rozwijane.
+Jest ona wstecznie kompatybilna z Netkitem, istnieje duża pula gotowych scenariuszy, które można zaadaptować.
+Dostępne jest także wiele tutoriali, które ułatwiają naukę korzystania z narzędzia.
 ## Źródła
 [Kathará - github](https://github.com/KatharaFramework/Kathara)
 [Kathará - przykłady](https://github.com/KatharaFramework/Kathara-Labs)
