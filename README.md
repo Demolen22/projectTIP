@@ -107,7 +107,7 @@ sudo ip addr add 10.100.0.2/24 dev enp3s0.100
    + Instalacja Pythona
    + Utworzenie wirtualnego środowiska pythona: ```python -m venv venv```
    + Aktywacja wirtualnego środowiska: ```source venv/bin/activate```
-   + ```pip install -r requirements.txt```
+   + Instalacja paczek: ```pip install -r requirements.txt```
 #### Konfiguracja części wirtualnej
 Wyświetlenie informacji o interfejsach:
 ```
@@ -144,12 +144,12 @@ E enp3s0.50
 ```
 #### Uruchomienie środwiska
 1. ```cd scenario```
-2. ```sudo kathara lstart``` - uruchomienie Kathary
+2. Uruchomienie Kathary: ```sudo kathara lstart```
 3. ```cd ..```
-4. ```./venv/bin/python lab.py``` - uruchomienie Netmiko
+4. Uruchomienie Netmiko: ```./venv/bin/python lab.py```
 #### Zatrzymanie środowiska
-- ```sudo kathara lclean```
-- Skrypt netmiko nie wprowadza trwałych zmian, można wrócić do stanu bazowego restartując switch.
+- Zatrzymanie Kathary: ```sudo kathara lclean```
+- Skrypt Netmiko nie wprowadza trwałych zmian, można wrócić do stanu bazowego restartując switch.
 ## Wnioski i napotkane problemy
 todo: czm zmiana pluginu
 ## Źródła
