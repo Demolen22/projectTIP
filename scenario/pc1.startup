@@ -1,0 +1,5 @@
+ip address add 10.110.0.3/24 dev eth0
+ip address add 10.120.0.3/24 dev eth1
+ip address add 10.130.0.3/24 dev eth2
+ip address add 10.140.0.3/24 dev eth3
+ip address add 10.150.0.3/24 dev eth4
