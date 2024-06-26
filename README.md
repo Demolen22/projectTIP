@@ -5,6 +5,7 @@ Celem projektu było przygotowanie sieci składającej się z części wirtualne
 Do zrealizowania celu wybrano technologię [Kathará](https://www.kathara.org/). Jest to narzędzie służące do tworzenia zwirtualizowanych sieci.
 Do realizacji części sprzętowej wykorzystano switch L2 Cisco 2950.
 ## Środowisko
+
 ## Jak zreplikować
 #### Konfiguracja switcha
 ```bash
@@ -30,6 +31,13 @@ username Q password BA
 enable secret Q-BA
 exit
 copy run start
+```
+Switch należy podłączyć do komputera na porcie 24.
+Na komputerze należy dodać interfejs vlanu 100 dodanego do odpowiedniego interfejsu fizycznego i nadać mu adres IP.
+Uwaga: należy podstawić odpowiednią nazwę interfejsu.
+```
+sudo ip link add link enp3s0 name enp3s0.100 type vlan id 100
+sudo ip addr add 10.100.0.2/24 dev enp3s0.100
 ```
 #### Przygotowanie środowiska
 1. [Instalacja Dockera](https://docs.docker.com/engine/install/)
