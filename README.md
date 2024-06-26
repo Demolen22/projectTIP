@@ -5,7 +5,7 @@ Celem projektu było przygotowanie sieci składającej się z części wirtualne
 Do zrealizowania celu wybrano technologię [Kathará](https://www.kathara.org/). Jest to narzędzie służące do tworzenia zwirtualizowanych sieci.
 Do realizacji części sprzętowej wykorzystano switch L2 Cisco 2950.
 ## Środowisko
-
+#### Schemat:
 ## Jak zreplikować
 #### Konfiguracja switcha
 ```bash
