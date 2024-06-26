@@ -6,6 +6,7 @@ Do zrealizowania celu wybrano technologię [Kathará](https://www.kathara.org/).
 Do realizacji części sprzętowej wykorzystano switch L2 Cisco 2950.
 ## Środowisko
 #### Schemat:
+![image](https://github.com/Demolen22/projectTIP/assets/92889577/8c6b87fe-e5da-4383-9918-43ceb016000e)
 ## Jak zreplikować
 #### Konfiguracja switcha
 ```bash
