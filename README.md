@@ -45,7 +45,7 @@ sudo ip addr add 10.100.0.2/24 dev enp3s0.100
 ```
 #### Przygotowanie środowiska
 1. [Instalacja Dockera](https://docs.docker.com/engine/install/)
-2. [Instalacja Kathary](https://github.com/KatharaFramework/Kathara/wiki/Linux?fbclid=IwZXh0bgNhZW0CMTAAAR35LvcFxyMJ0MfLR0GGqlDhiOrKGSJKdCP6XbczOfalIP8QpHiyP_wWje0_aem_U0aDp5UPpKc-KBYvvxhOsQ), na systemie Linux
+2. [Instalacja Kathary](https://github.com/KatharaFramework/Kathara/wiki/Linux?fbclid=IwZXh0bgNhZW0CMTAAAR35LvcFxyMJ0MfLR0GGqlDhiOrKGSJKdCP6XbczOfalIP8QpHiyP_wWje0_aem_U0aDp5UPpKc-KBYvvxhOsQ), na systemie Linux, w wersji 3.7.5.
 3. Przestawienie Kathary na starszą wersję pluginu sieciowego.
   ```bash
   kathara settings
