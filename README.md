@@ -108,7 +108,7 @@ sudo ip addr add 10.100.0.2/24 dev enp3s0.100
   Wybieramy opcję 1
 
 4. Instalacja Netmiko
-   + Instalacja Pythona
+   + Instalacja Pythona 3.11.9
    + Utworzenie wirtualnego środowiska pythona: ```python -m venv venv```
    + Aktywacja wirtualnego środowiska: ```source venv/bin/activate```
    + Instalacja paczek: ```pip install -r requirements.txt```
