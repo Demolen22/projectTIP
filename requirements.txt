@@ -1,1 +1,1 @@
-netmiko
+netmiko==4.3.0
